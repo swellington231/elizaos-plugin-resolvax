@@ -1,0 +1,37 @@
+{
+  "name": "elizaos-plugin-resolvax",
+  "version": "1.0.0",
+  "description": "ElizaOS plugin for ResolvaX high-precision math, financial calculations and LaTeX conversion with x402 on-chain settlement on Base L2.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "elizaos",
+    "elizaos-plugin",
+    "math",
+    "x402",
+    "base",
+    "resolvax",
+    "autonomous-agents",
+    "m2m-commerce"
+  ],
+  "author": "ResolvaX Tecnologias (https://resolvax.com.br)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swellington231/elizaos-plugin-resolvax.git"
+  },
+  "peerDependencies": {
+    "@elizaos/core": "latest"
+  },
+  "dependencies": {
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@elizaos/core": "latest",
+    "typescript": "^5.3.3"
+  }
+}
