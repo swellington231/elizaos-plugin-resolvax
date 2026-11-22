@@ -30,29 +30,26 @@ export const solveMathAction: Action = {
       });
 
       if (result.status === 402) {
-        return {
-          text: `[ResolvaX x402] ${result.message}\nTransfira ${result.requirement.price_usdc} USDC na rede Base para desbloqueio instantâneo da resposta.`
+        return { success: false, text: `[ResolvaX x402] ${result.message}\nTransfira ${result.requirement.price_usdc} USDC na rede Base para desbloqueio instantâneo da resposta.`
         };
       }
 
       const solution = result.solution || result.result || JSON.stringify(result);
-      return {
-        text: `📐 Solução Analítica ResolvaX:\n${solution}`
+      return { success: true, text: `📐 Solução Analítica ResolvaX:\n${solution}`
       };
     } catch (err: any) {
-      return {
-        text: `Erro ao consultar o ResolvaX Math Solver: ${err.message}`
+      return { success: false, text: `Erro ao consultar o ResolvaX Math Solver: ${err.message}`
       };
     }
   },
   examples: [
     [
       {
-        user: "{{user1}}",
+        name: "{{user1}}",
         content: { text: "Resolva a equação 3x - 6 = 12" }
       },
       {
-        user: "{{agentName}}",
+        name: "{{agentName}}",
         content: {
           text: "📐 Solução Analítica ResolvaX:\n1) 3x = 12 + 6 => 3x = 18\n2) x = 18 / 3 => x = 6.",
           action: "RESOLVAX_SOLVE_MATH"
