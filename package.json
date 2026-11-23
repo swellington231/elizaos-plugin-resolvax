@@ -1,8 +1,13 @@
 {
   "name": "elizaos-plugin-resolvax",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "type": "module",
   "description": "ElizaOS plugin for ResolvaX high-precision math, financial calculations and LaTeX conversion with x402 on-chain settlement on Base L2.",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
